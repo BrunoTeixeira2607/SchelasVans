@@ -13,7 +13,21 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     </head>
     <body>
+        <?php
+        require_once ('Classes/Funcoes.class.php');
+        require_once ('Classes/Usuario.class.php');
 
+        $objFc = new Funcoes();
+        $objUsr = new Usuario();
+
+        if (isset($_POST['btCadastrar'])) {
+            if ($objUsr->queryInsert($_POST) == 'ok') {
+                header('location: index.php');
+            } else {
+                echo '<script type="text/javascript">alert("Erro ao cadastrar")</script>';
+            }
+        }
+        ?>
         <?php include 'Header.php' ?>
 
 
@@ -110,20 +124,21 @@
 
                 <div class="pure-g">
                     <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-                        <form class="pure-form pure-form-stacked">
+                        <form class="pure-form pure-form-stacked" method="post">
                             <fieldset>
 
                                 <label for="name">Seu nome</label>
-                                <input id="name" type="text" placeholder="Seu nome">
+                                <input id="name" name="nome" type="text" placeholder="Seu nome">
 
 
                                 <label for="email">Seu E-mail</label>
-                                <input id="email" type="email" placeholder="Seu E-mail">
+                                <input id="email" name="email" type="email" placeholder="Seu E-mail">
 
                                 <label for="password">Sua senha</label>
-                                <input id="password" type="password" placeholder="Sua senha">
+                                <input id="password" name="senha"type="password" placeholder="Sua senha">
 
-                                <button type="submit" class="pure-button">Cadastrar</button>
+
+                                <button type="submit" class="pure-button" name="btCadastrar">Cadastrar</button>
                             </fieldset>
                         </form>
                     </div>
