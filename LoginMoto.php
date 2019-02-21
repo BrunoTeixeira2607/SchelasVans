@@ -49,12 +49,13 @@ and open the template in the editor.
                             <form>
                                 <div class="form-group">
                                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail">
-                            </form>
+                                    </form>
+                                </div>
+                                <button type="button" class="btn btn-primary">Enviar</button>
                         </div>
-                      <button type="button" class="btn btn-primary">Enviar</button>
+                    </div>
                 </div>
-            </div>
-        </div>    
+            </div>    
 
 
 
@@ -67,9 +68,9 @@ and open the template in the editor.
 
 
 
-        <div class="footer l-box is-center">
-            Schelas Vans e um produto de propriedades Schelas Company. Todos os direitos reservados.
-        </div> 
+            <div class="footer l-box is-center">
+                Schelas Vans e um produto de propriedades Schelas Company. Todos os direitos reservados.
+            </div> 
     </body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
