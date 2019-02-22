@@ -29,14 +29,15 @@ and open the template in the editor.
 
         if (isset($_POST['btCadastrar'])) {
             if ($objUsr->queryInsert($_POST) == 'ok') {
-            echo '<script type="text/javascript">alert("Cadastro efetuado com Sucesso !")</script>';
-            header('location: index.php');}
+                echo '<script type="text/javascript">alert("Cadastro efetuado com Sucesso !")</script>';
+                header('location: index.php');
+            }
 //            } else {
 //                echo '<script type="text/javascript">alert("Erro ao cadastrar")</script>';
 //            }
         }
         ?>
-        <?php include 'Header.php' ?>
+<?php include 'Header.php' ?>
         <br><br><br>
         <div class= "container">
             <div class="row">
@@ -79,6 +80,8 @@ and open the template in the editor.
                     </form>
                 </div>
             </div>
+<?php include 'Footer.php'; ?>
+
         </div>
 
 

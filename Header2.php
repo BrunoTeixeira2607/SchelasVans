@@ -21,7 +21,7 @@
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item"><a href="index.php" class="pure-menu-link">Home</a></li>
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">Conheça</a></li>
-                    <li class="pure-menu-item"><a href="LoginUser.php" class="pure-menu-link">Entrar</a></li>
+                    <li class="pure-menu-item"><a href="Login.php" class="pure-menu-link">Entrar</a></li>
                 </ul>
             </div>
         </div>

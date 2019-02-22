@@ -159,10 +159,7 @@
 
             </div>
 
-            <div class="footer l-box is-center">
-                Schelas Vans e um produto de propriedades Schelas Company. Todos os direitos reservados.
-            </div>
-
+            <?php include 'Footer.php'; ?>
         </div>
 
 
