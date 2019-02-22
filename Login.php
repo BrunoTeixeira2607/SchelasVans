@@ -56,8 +56,8 @@ and open the template in the editor.
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                    <?php } ?>
+                        </div> 
+                    <?php } #comment super produtivo ?>
                 </div>
                 <div class="col-md-1">
                 </div>    
