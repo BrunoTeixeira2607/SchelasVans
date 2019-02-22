@@ -77,7 +77,7 @@ class Usuario {
             }
         } catch (PDOException $ex) {
             echo 'Exception -> ';
-               var_dump($e->getMessage());
+            var_dump($e->getMessage());
         }
     }
 
@@ -112,6 +112,28 @@ class Usuario {
             }
         } catch (PDOException $ex) {
             return 'error' . $ex->getMessage();
+        }
+    }
+
+    public function logar($dado) {
+        $this->email = $dado['email'];
+        $this->senha = sha1($dado['senha']);
+        try {
+            $cst = $this->con->conectar()->prepare("SELECT IdUser, email, senha FROM `usuario` WHERE email = :email AND senha = :senha");
+            $cst->bindParam(":email", $this->email, PDO::PARAM_STR);
+            $cst->bindParam(":senha", $this->senha, PDO::PARAM_STR);
+            $cst->execute();
+            if($cst->rowCount() == 0){
+                header('location: Login.php/?Login=error');
+            }else{
+                session_start();
+                $rst=$cst->fetch();
+                $_SESSION['logado'] = "sim";
+                $_SESSION['usuario'] = $rst['IdUser'];
+                header("location /index.php");
+            }
+        } catch (PDOException $e) {
+            return $e->getMessage();
         }
     }
 
