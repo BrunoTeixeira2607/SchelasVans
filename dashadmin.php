@@ -12,13 +12,69 @@
         <link rel="stylesheet" href="css/layouts/marketing.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </head>
-    
+
     <body>
         <?php include 'Header2.php'; ?>
-        <div class= "container">
-        </div>    
+        <div class="container">            
+            <div id="content">
+                <a href="#" data-activates="slide-out" class="button-collapse hide-on-large-only"><i class="material-icons">menu</i></a>
+                <div class="row">
+                    <div class="col s2 l2 m2">
+                        <div class="card">
+                            <div class="card-image">
+                            <img src="img/test/grafico.png">
+                            <span class="card-title">Card Title</span>
+                            </div>
+                            <div class="card-action">
+                                <a href="#">This is a link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s2 l2 m2">
+                        <div class="card">
+                            <div class="card-image">
+                                    <img src="img/test/grafico2.jpg">
+                            <span class="card-title">Card Title</span>
+                            </div>
+                            <div class="card-action">
+                            <a href="#">This is a link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col s2 l2 m2">
+                        <div class="card">
+                            <div class="card-image">
+                                    <img src="img/test/grafico3.png">
+                            <span class="card-title">Card Title</span>
+                            </div>
+                            <div class="card-action">
+                            <a href="#">This is a link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s2 l2 m2">
+                        <div class="card">
+                            <div class="card-image">
+                                    <img src="img/test/grafico4.png">
+                            <span class="card-title">Card Title</span>
+                            </div>
+                            <div class="card-action">
+                            <a href="#">This is a link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>    
+                
+        </div>
+        
     </body>
 
     <footer>
