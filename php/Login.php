@@ -17,7 +17,7 @@
     </header>
     <body>
         <?php
-        require 'Header2.php';
+        require_once 'Header2.php';
         require_once 'Classes/Usuario.class.php';
 
         $objUser = new Usuario();
