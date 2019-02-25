@@ -31,7 +31,7 @@
             <br><br><br>
             <h1> LOGIN </h1>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <form method="post">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Endereço de e-mail</label>
@@ -48,7 +48,7 @@
                         <div class="row">
                             <div class="col s12 m5">
                                 <div class="card-panel red lighten-2">
-                                    <span class="white-text"> Ops ! email ou senha inválidos.
+                                    <span class="white-text"> Ops! Email ou senha inválidos.
                                     </span>
                                 </div>
                             </div>

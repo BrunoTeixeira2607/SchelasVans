@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        
     </head>
     <body>
         <?php
@@ -39,16 +40,16 @@
                 </p>
                 <div class="col-md-12">
                     <p>
-                        <button onclick="setTimeout(window.location.replace('php/Login.php'), 5000);" id="alunobtn" class="btn btn-light" data-toggle="collapse" href="#descepass" role="button" aria-expanded="false" aria-controls="descepass">
-                            SOU ALUNO
+                        <button id="passbtn" class="btn btn-light" data-toggle="collapse" href="#descepass" role="button" aria-expanded="false" aria-controls="descepass">
+                            SOU PASSAGEIRO
                         </button>
-                        <button onclick="setTimeout(window.location.replace('php/Login.php'), 5000);" id="alunobtn" class="btn btn-light" data-toggle="collapse" href="#descepass" role="button" aria-expanded="false" aria-controls="descepass">
+                        <button id="motobtn" class="btn btn-light" data-toggle="collapse" href="#descemot" role="button" aria-expanded="false" aria-controls="descemot">
                             SOU MOTORISTA
                         </button>
                     </p>
                     <div class="collapse" id="descemot">
                         <div class="card card-body">
-                            <p> gere seus boletos no site, e gerencie sua conta </p>
+                            <p> Gere seus boletos no site, e gerencie sua conta </p>
                         </div>
                     </div>
                     <div class="collapse" id="descepass">
@@ -62,7 +63,7 @@
 
         <div class="content-wrapper">
             <div class="content">
-                <h2 class="content-head is-center">Excelencia em gerenciamento de vans.</h2>
+                <h2 class="content-head is-center">Excelência em gerenciamento de vans.</h2>
 
                 <div class="pure-g">
                     <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
@@ -123,6 +124,18 @@
                 <h2 class="content-head is-center">Crie sua conta gratis.</h2>
 
                 <div class="pure-g">
+                    <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                        <h4>Fale conosco</h4>
+                        <p>
+                            Envie um e-mail com dúvidas e sugestões. Nossa equipe estará disposta a sanar qualquer dúvida
+                        </p>
+
+                        <h4>Mais informações</h4>
+                        <p>
+                            E-mail: schelasvansco@gmail.com<br>
+                            Fone: 0800 666 6666 
+                        </p>
+                    </div>
                     <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
                         <form class="pure-form pure-form-stacked" method="post">
                             <fieldset>
@@ -143,23 +156,11 @@
                         </form>
                     </div>
 
-                    <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-                        <h4>Fale conosco</h4>
-                        <p>
-                            Envie um e-mail com dúvidas e sugestões. Nossa equipe estará disposta a sanar qualquer dúvida
-                        </p>
-
-                        <h4>Mais informações</h4>
-                        <p>
-                            E-mail: schelasvansco@gmail.com<br>
-                            Fone: 0800 666 6666 
-                        </p>
-                    </div>
                 </div>
 
             </div>
 
-            <?php include 'Footer.php'; ?>
+            
         </div>
 
 
@@ -167,5 +168,10 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script src="js/index.js"></script>
     </body>
+
+    <footer>
+        <?php include 'php/Footer.php'; ?>
+    </footer>
 </html>
