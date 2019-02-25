@@ -14,8 +14,8 @@
     </head>
     <body>
         <?php
-        require_once ('Classes/Funcoes.class.php');
-        require_once ('Classes/Usuario.class.php');
+        require_once ('php/Classes/Funcoes.class.php');
+        require_once ('php/Classes/Usuario.class.php');
 
         $objFc = new Funcoes();
         $objUsr = new Usuario();
@@ -28,7 +28,7 @@
             }
         }
         ?>
-        <?php include 'Header.php' ?>
+        <?php include 'php/Header.php' ?>
 
 
         <div class="splash-container">
@@ -39,10 +39,10 @@
                 </p>
                 <div class="col-md-12">
                     <p>
-                        <button onclick="setTimeout(window.location.replace('LoginUser.php'), 5000);" id="alunobtn" class="btn btn-light" data-toggle="collapse" href="#descepass" role="button" aria-expanded="false" aria-controls="descepass">
+                        <button onclick="setTimeout(window.location.replace('php/Login.php'), 5000);" id="alunobtn" class="btn btn-light" data-toggle="collapse" href="#descepass" role="button" aria-expanded="false" aria-controls="descepass">
                             SOU ALUNO
                         </button>
-                        <button onclick="setTimeout(window.location.replace('LoginMoto.php'), 5000);" id="alunobtn" class="btn btn-light" data-toggle="collapse" href="#descepass" role="button" aria-expanded="false" aria-controls="descepass">
+                        <button onclick="setTimeout(window.location.replace('php/Login.php'), 5000);" id="alunobtn" class="btn btn-light" data-toggle="collapse" href="#descepass" role="button" aria-expanded="false" aria-controls="descepass">
                             SOU MOTORISTA
                         </button>
                     </p>
