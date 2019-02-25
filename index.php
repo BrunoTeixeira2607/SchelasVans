@@ -170,6 +170,6 @@
     </body>
 
     <footer>
-        <?php include './php/Footer.php'; ?>
+        <?php require_once('php/Footer.php'); ?>
     </footer>
 </html>
