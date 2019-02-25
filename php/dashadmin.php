@@ -5,11 +5,11 @@
         <title>Schelas Vans Co.</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-        <link rel="stylesheet" href="css/layouts/marketing.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/layouts/marketing.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </header>
@@ -20,30 +20,22 @@ require_once 'Classes/Usuario.class.php';
 $objSESS = new Usuario();
 //VALIDANDO USUARIO
 session_start();
+$_SESSION['logado']="nao";
 if($_SESSION["logado"] == "sim"){
 	$objSESS->usuarioLogado($_SESSION['usuario']);
 }else{
-	header("location: login.php"); 
+	//header("location: login.php"); 
 }
 if(isset($_GET['sair']) == "sim"){
 	$objSESS->sairUser();
 }
+$_SESSION['logado']="sim";
+$_SESSION['nome']="Wiltencir";
 
 ?>
     <body>
-        <?php include 'Header2.php'; ?>
-        <div class="header">
-            <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-                <a class="pure-menu-heading" href="">Schelas Vans</a>
-
-                <ul class="pure-menu-list">
-                    <li class="pure-menu-item"><a href="dashadmin.php" class="pure-menu-link"> <?=$_SESSION ['nome']?> </a></li>
-                    <li class="pure-menu-item"><a href="index.php" class="pure-menu-link">Home</a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Conheça</a></li>
-                    <li class="pure-menu-item"><a href="Login.php" class="pure-menu-link">Entrar</a></li>
-                </ul>
-            </div>
-        </div>
+        <?php include "Header2.php"; ?>
+        <br><br><br>
         <div class="container">            
             <div id="content">
                 <div class="row">

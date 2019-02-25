@@ -11,11 +11,15 @@
                 <a class="pure-menu-heading" href="../index.php">Schelas Vans</a>
 
                 <ul class="pure-menu-list">
-                    <li class="pure-menu-item"><a href="../index.php" class="pure-menu-link">Sair</a></li>
-                    <li class="pure-menu-item"><a href="../index.php" class="pure-menu-link">Conheça</a></li>
-                    <li class="pure-menu-item"><a href="php/Login.php" class="pure-menu-link">Entrar</a></li>
+                    <li class="pure-menu-item"><a id="perfil" href="#" class="pure-menu-link"> <?= $_SESSION['nome'] ?> </a></li>
+                    <li class="pure-menu-item"><a id="conheca" href="#" class="pure-menu-link">Conheça</a></li>
+                    <li class="pure-menu-item"><a id="login" href="#" class="pure-menu-link"><?php if($_SESSION["logado"] == "sim"){?>Sair<?php }else{?>Entrar<?php }?> </a></li>
                 </ul>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script src="../js/header.js"></script>
     </body>
 </html>
