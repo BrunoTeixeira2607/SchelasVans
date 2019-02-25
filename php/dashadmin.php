@@ -48,7 +48,6 @@ if(isset($_GET['sair']) == "sim"){
         </div>
         <div class="container">            
             <div id="content">
-                <a href="#" data-activates="slide-out" class="button-collapse hide-on-large-only"><i class="material-icons">menu</i></a>
                 <div class="row">
                     <div class="col s2 l2 m2">
                         <div class="card">
