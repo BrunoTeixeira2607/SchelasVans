@@ -12,7 +12,7 @@
     </header>
 
     <body>
-        <div class="footer l-box white-text is-center">
+        <div class="footer l-box white-text is-center" style="left:0">
             Schelas Vans e um produto de propriedades Schelas Company. Todos os direitos reservados.
         </div>
     </body>
