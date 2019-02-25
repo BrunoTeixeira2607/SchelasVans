@@ -11,9 +11,9 @@
                 <a class="pure-menu-heading" href="../index.php">Schelas Vans</a>
 
                 <ul class="pure-menu-list">
-                    <li class="pure-menu-item"><a id="perfil" href="#" class="pure-menu-link"> <?= $_SESSION['nome'] ?> </a></li>
+                    <li class="pure-menu-item"><a id="perfil" href="#" class="pure-menu-link">Bem vindo(a) <?php $_SESSION['nome'];?>!</a></li>
                     <li class="pure-menu-item"><a id="conheca" href="#" class="pure-menu-link">Conheça</a></li>
-                    <li class="pure-menu-item"><a id="login" href="#" class="pure-menu-link"><?php if($_SESSION["logado"] == "sim"){?>Sair<?php }else{?>Entrar<?php }?> </a></li>
+                    <li class="pure-menu-item"><a id="login" href="#" class="pure-menu-link"><?php if($_SESSION["logado"] == "sim"){?>Sair<?php }else{?>Entrar<?php }?></a></li>
                 </ul>
             </div>
         </div>
@@ -23,3 +23,4 @@
         <script src="../js/header.js"></script>
     </body>
 </html>
+

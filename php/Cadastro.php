@@ -33,10 +33,10 @@
         ?>
         <?php include 'Header2.php' ?>
         <br><br><br>
-        <div class= "container is-center">
+        <div class= "container">
             <div class="row">
                 <div class="col-md-5 offset-md-4">
-                    <H1>Cadastro de usuários</H1>
+                    <H1 class="is-center">Cadastro de usuários</H1>
                     <p>Complete os campos a seguir para criar sua conta.</p>
                     <form class="pure-form pure-form-aligned" method="post">
                         <fieldset>

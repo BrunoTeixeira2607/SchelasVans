@@ -34,16 +34,16 @@ $_SESSION['nome']="Wiltencir";
 
 ?>
     <body>
-        <?php include "Header2.php"; ?>
+        <?php include "Header2.php";  ?>
         <br><br><br>
-        <div class="container">            
+        <?php include "Menu/menuPass.php"; ?>
+        <div class="container offset-md-3">            
             <div id="content">
                 <div class="row">
                     <div class="col s2 l2 m2">
                         <div class="card">
                             <div class="card-image">
                             <img src="../img/test/grafico.png">
-                            <span class="card-title">Card Title</span>
                             </div>
                             <div class="card-action">
                                 <a href="#">This is a link</a>
@@ -53,8 +53,7 @@ $_SESSION['nome']="Wiltencir";
                     <div class="col s2 l2 m2">
                         <div class="card">
                             <div class="card-image">
-                                    <img src="../img/test/grafico2.jpg">
-                            <span class="card-title">Card Title</span>
+                            <img src="../img/test/grafico2.jpg">
                             </div>
                             <div class="card-action">
                             <a href="#">This is a link</a>
@@ -67,8 +66,7 @@ $_SESSION['nome']="Wiltencir";
                     <div class="col s2 l2 m2">
                         <div class="card">
                             <div class="card-image">
-                                    <img src="../img/test/grafico3.png">
-                            <span class="card-title">Card Title</span>
+                            <img src="../img/test/grafico3.png">
                             </div>
                             <div class="card-action">
                             <a href="#">This is a link</a>
@@ -78,8 +76,7 @@ $_SESSION['nome']="Wiltencir";
                     <div class="col s2 l2 m2">
                         <div class="card">
                             <div class="card-image">
-                                    <img src="../img/test/grafico4.png">
-                            <span class="card-title">Card Title</span>
+                            <img src="../img/test/grafico4.png">
                             </div>
                             <div class="card-action">
                             <a href="#">This is a link</a>
