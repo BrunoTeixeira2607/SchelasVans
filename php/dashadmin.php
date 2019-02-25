@@ -25,7 +25,7 @@
                     <div class="col s2 l2 m2">
                         <div class="card">
                             <div class="card-image">
-                            <img src="img/test/grafico.png">
+                            <img src="../img/test/grafico.png">
                             <span class="card-title">Card Title</span>
                             </div>
                             <div class="card-action">
@@ -36,7 +36,7 @@
                     <div class="col s2 l2 m2">
                         <div class="card">
                             <div class="card-image">
-                                    <img src="img/test/grafico2.jpg">
+                                    <img src="../img/test/grafico2.jpg">
                             <span class="card-title">Card Title</span>
                             </div>
                             <div class="card-action">
@@ -50,7 +50,7 @@
                     <div class="col s2 l2 m2">
                         <div class="card">
                             <div class="card-image">
-                                    <img src="img/test/grafico3.png">
+                                    <img src="../img/test/grafico3.png">
                             <span class="card-title">Card Title</span>
                             </div>
                             <div class="card-action">
@@ -61,7 +61,7 @@
                     <div class="col s2 l2 m2">
                         <div class="card">
                             <div class="card-image">
-                                    <img src="img/test/grafico4.png">
+                                    <img src="../img/test/grafico4.png">
                             <span class="card-title">Card Title</span>
                             </div>
                             <div class="card-action">

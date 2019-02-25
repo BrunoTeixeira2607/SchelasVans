@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-        <link rel="stylesheet" href="css/layouts/marketing.css">
+        <link rel="stylesheet" href="../css/layouts/marketing.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -34,16 +34,33 @@
                 <div class="col-md-6">
                     <form method="post">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Endereço de e-mail</label>
-                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="email">Endereço de e-mail</label>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
 
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Senha</label>
-                            <input type="password" name="senha" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <label for="password">Senha</label>
+                            <input type="password" name="senha" class="form-control" id="password" placeholder="Password">
                         </div>
                         <button type="submit" name="btLogar" class="btn btn-primary">Entrar</button>
+                        <a href="#forgot" data-toggle="collapse">Esqueci minha senha</a>
                     </form>
+
+                    <div class="collapse" id="forgot">
+                        <div class="card card-body grey lighten-1">
+                                <div class="card-content white-text">
+                                    <span class="card-title">Esqueceu a senha ?</span>
+                                    <p class="emailnome">Caso tenha esquecido sua senha, digite seu e-mail para que seja enviada solicitação de recuperação</p>
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail">
+                                            </form>
+                                        </div>
+                                        <button type="button" class="btn btn-primary">Enviar</button>
+                                </div>
+                        </div>
+                    </div>
+
                     <?php if (!empty($_GET['Login']) == 'error   ') { ?>                  
                         <div class="row">
                             <div class="col s12 m5">
@@ -58,18 +75,7 @@
                 <div class="col-md-1">
                 </div>    
                 <div class="col-md-4">
-                    <div class="card grey lighten-1">
-                        <div class="card-content white-text">
-                            <span class="card-title">Esqueceu a senha ?</span>
-                            <p class="emailnome">Caso tenha esquecido sua senha, digite seu e-mail para que seja enviada solicitação de recuperação</p>
-                            <form>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail">
-                                    </form>
-                                </div>
-                                <button type="button" class="btn btn-primary">Enviar</button>
-                        </div>
-                    </div>
+                    
                 </div>    
                 </body>
 

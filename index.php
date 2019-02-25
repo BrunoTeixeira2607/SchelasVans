@@ -49,12 +49,12 @@
                     </p>
                     <div class="collapse" id="descemot">
                         <div class="card card-body">
-                            <p> Gere seus boletos no site, e gerencie sua conta </p>
+                            <p>Gere seus boletos no site, e gerencie sua conta<br>Você está sendo redirecionado.</p>
                         </div>
                     </div>
                     <div class="collapse" id="descepass">
                         <div class="card card-body">
-                            <p>Você será redirecionado ao login do usuario</p>
+                            <p>Gerencie seu dia a dia com mais conforto.<br>Você está sendo redirecionado.</p>
                         </div>
                     </div>
                 </div>
