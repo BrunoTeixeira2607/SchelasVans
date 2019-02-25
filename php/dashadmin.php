@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
+    <header>
         <title>Schelas Vans Co.</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </head>
+    </header>
 <?php
 //BUSCANDO AS CLASSES
 require_once 'Classes/Usuario.class.php';
@@ -33,7 +33,7 @@ if(isset($_GET['sair']) == "sim"){
 
 ?>
     <body>
-        <?php// include 'Header2.php'; ?>
+        <!--<?php //include 'Header2.php'; ?>-->
         <div class="header">
             <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
                 <a class="pure-menu-heading" href="">Schelas Vans</a>
