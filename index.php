@@ -29,8 +29,7 @@
             }
         }
         ?>
-        <?php include 'php/Header.php' ?>
-
+        <?php include 'php/Header2.php' ?>
 
         <div class="splash-container">
             <div class="splash">
@@ -70,7 +69,7 @@
 
                         <h3 class="content-subhead">
                             <i class="fa fa-rocket"></i>
-                            Facil utilização
+                            Fácil utilização
                         </h3>
                         <p>
                             Cadastre-se e ganhe um mês de adesão gratis por cortesia da Schelas Technologies

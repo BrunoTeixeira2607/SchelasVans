@@ -21,7 +21,7 @@ session_start();
 if($_SESSION["logado"] == "sim"){
 	$objSESS->usuarioLogado($_SESSION['usuario']);
 }else{
-	header("location: Login.php"); 
+	//header("location: Login.php"); 
 }
 if(isset($_GET['sair']) == "sim"){
 	$objSESS->sairUser();
@@ -36,7 +36,7 @@ if(isset($_GET['sair']) == "sim"){
                     <li class="pure-menu-item"><a href="../index.php" class="pure-menu-link">Sair</a></li>
                     <li class="pure-menu-item"><a href="../index.php" class="pure-menu-link">Home</a></li>
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">Conheça</a></li>
-                    <li class="pure-menu-item"><a href="Login.php" class="pure-menu-link">Entrar</a></li>
+                    <li class="pure-menu-item"><a href="php/Login.php" class="pure-menu-link">Entrar</a></li>
                 </ul>
             </div>
         </div>

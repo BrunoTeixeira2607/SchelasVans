@@ -33,7 +33,7 @@ if(isset($_GET['sair']) == "sim"){
 
 ?>
     <body>
-        <!--<?php //include 'Header2.php'; ?>-->
+        <?php include 'Header2.php'; ?>
         <div class="header">
             <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
                 <a class="pure-menu-heading" href="">Schelas Vans</a>
