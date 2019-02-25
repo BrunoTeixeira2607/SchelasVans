@@ -15,6 +15,7 @@ class Usuario {
     private $dataNas;
     private $RG;
     private $CPF;
+    private $tipoUser;
 
     public function __construct() {
         $this->con = new Conexao();
@@ -61,7 +62,7 @@ class Usuario {
             $this->RG = $dados['RG'];
 
             $this->dataCadastro = $this->objfc->dataAtual(2);
-            $cst = $this->con->conectar()->prepare("insert into usuario (nome,email,dataNas,RG,CPF,data_Cadastro,senha) values (:nome, :email, :dataNas, :RG, :CPF, :data_Cadastro, :senha);");
+            $cst = $this->con->conectar()->prepare("insert into usuario (nome,email,dataNas,RG,CPF,data_Cadastro,senha,tipoUser) values (:nome, :email, :dataNas, :RG, :CPF, :data_Cadastro, :senha, 1);");
             $cst->bindParam(":nome", $this->nome, PDO::PARAM_STR);
             $cst->bindParam(":email", $this->email, PDO::PARAM_STR);
             $cst->bindParam(":dataNas", $this->dataNas, PDO::PARAM_STR);
@@ -123,18 +124,44 @@ class Usuario {
             $cst->bindParam(":email", $this->email, PDO::PARAM_STR);
             $cst->bindParam(":senha", $this->senha, PDO::PARAM_STR);
             $cst->execute();
-            if($cst->rowCount() == 0){
+            if ($cst->rowCount() == 0) {
                 header('location: Login.php/?Login=error');
-            }else{
+            } else {
                 session_start();
-                $rst=$cst->fetch();
+                $rst = $cst->fetch();
                 $_SESSION['logado'] = "sim";
                 $_SESSION['usuario'] = $rst['IdUser'];
-                header("location /index.php");
+                $tipoUser = $this->con->conectar()->prepare("SELECT tipoUser FROM `usuario` WHERE `IdUser` = :IdUser;");
+                $cst->bindParam(':IdUser', $dado, PDO::PARAM_INT);
+
+                if ($tipoUser == 1) {
+                    $_SESSION['usuario'] = 1;
+                    header("location: ../index.php");
+                } else if ($tipoUser == 2) {
+                    $_SESSION['usuario'] = 2;
+                    header("location: ../index.php");
+                } else if ($tipoUser == 3) {
+                    $_SESSION['usuario'] = 3;
+                    header("location: dashadmin.php");
+                }
+
+                header("location: dashadmin.php");
             }
         } catch (PDOException $e) {
             return $e->getMessage();
         }
+    }
+
+    public function usuarioLogado($dado) {
+        $cst = $this->con->conectar()->prepare("SELECT `IdUser`, `nome`, `email` FROM `usuario` WHERE `IdUser` = :IdUser;");
+        $cst->bindParam(':IdUser', $dado, PDO::PARAM_INT);
+        $cst->execute();
+        $rst = $cst->fetch();
+    }
+
+    public function sairUser() {
+        session_destroy();
+        header('location: http://localhost/login');
     }
 
 }

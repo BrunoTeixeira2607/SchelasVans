@@ -12,13 +12,29 @@
         <link rel="stylesheet" href="../css/layouts/marketing 2.css">
         
     </head>
-
+<?php
+//BUSCANDO AS CLASSES
+require_once 'Classes/Usuario.class.php';
+//ESTANCIANDO 
+$objSESS = new Usuario();
+//VALIDANDO USUARIO
+session_start();
+if($_SESSION["logado"] == "sim"){
+	$objSESS->usuarioLogado($_SESSION['usuario']);
+}else{
+	header("location: login.php"); 
+}
+if(isset($_GET['sair']) == "sim"){
+	$objSESS->sairUser();
+}
+?>
     <body>
         <div class="header">
             <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
                 <a class="pure-menu-heading" href="">Schelas Vans</a>
 
                 <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a href="index.php" class="pure-menu-link">sair</a></li>
                     <li class="pure-menu-item"><a href="index.php" class="pure-menu-link">Home</a></li>
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">Conheça</a></li>
                     <li class="pure-menu-item"><a href="Login.php" class="pure-menu-link">Entrar</a></li>

@@ -30,7 +30,7 @@ and open the template in the editor.
         if (isset($_POST['btCadastrar'])) {
             if ($objUsr->queryInsert($_POST) == 'ok') {
                 echo '<script type="text/javascript">alert("Cadastro efetuado com Sucesso !")</script>';
-                header('location: index.php');
+                header('location: ../index.php');
             }
 //            } else {
 //                echo '<script type="text/javascript">alert("Erro ao cadastrar")</script>';
