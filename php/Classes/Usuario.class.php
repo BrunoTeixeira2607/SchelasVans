@@ -134,6 +134,7 @@ class Usuario {
                     $_SESSION['nome'] = $rst['name'];
                     $_SESSION['userid'] = $rst['IdUser'];
                     $this->usuarioTipo($rst['IdUser']);
+                    
                     return true;
                 }
             }
