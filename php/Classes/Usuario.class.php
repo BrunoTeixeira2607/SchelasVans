@@ -120,14 +120,20 @@ class Usuario {
         $this->email = $email;
         $this->senha = sha1($password);
         try {
-            $cst = $this->con->conectar()->prepare("SELECT IdUser, email, senha FROM `usuario` WHERE email = :email AND senha = :senha");
+            $cst = $this->con->conectar()->prepare("SELECT IdUser, email, nome, senha FROM `usuario` WHERE email = :email AND senha = :senha");
             $cst->bindParam(":email", $this->email, PDO::PARAM_STR);
             $cst->bindParam(":senha", $this->senha, PDO::PARAM_STR);
             $cst->execute();
-            if ($cst->rowCount() == 0) {
+            if ($cst->rowCount() == 0) { 
                 return false;
             } else {
                 if ($cst->rowCount() == 1) {
+                    $rst = $cst->fetch();
+                    session_start();
+                    $_SESSION['logado'] = "sim";
+                    $_SESSION['nome'] = $rst['name'];
+                    $_SESSION['userid'] = $rst['IdUser'];
+                    $this->usuarioTipo($rst['IdUser']);
                     return true;
                 }
             }
@@ -136,16 +142,39 @@ class Usuario {
         }
     }
 
-    public function usuarioLogado($dado) {
+    public function usuarioLogado($userId) {
         $cst = $this->con->conectar()->prepare("SELECT `IdUser`, `nome`, `email` FROM `usuario` WHERE `IdUser` = :IdUser;");
-        $cst->bindParam(':IdUser', $dado, PDO::PARAM_INT);
+        $cst->bindParam(':IdUser', $userId, PDO::PARAM_INT);
         $cst->execute();
         $rst = $cst->fetch();
     }
 
+    public function usuarioTipo($userId) {
+        
+        $cst = $this->con->conectar()->prepare("SELECT tipoUser FROM `usuario` WHERE `IdUser` = :IdUser;");
+        $cst->bindParam(':IdUser', $userId, PDO::PARAM_INT);
+        $cst->execute();
+        $rst = $cst->fetch();
+        
+        $tipoUser = $rst['tipoUser'];
+
+        if ($tipoUser == 1) {
+            $_SESSION['usuario'] = 1;
+            header("location: ../index.php");
+        } else if ($tipoUser == 2) {
+            $_SESSION['usuario'] = 2;
+            header("location: ../index.php");
+        } else if ($tipoUser == 3) {
+            $_SESSION['usuario'] = 3;
+            header("location: ../index.php");
+        } else{
+            $this->sairUser();
+        }
+    }
+
     public function sairUser() {
         session_destroy();
-        header('location: ../index.php');
+        return true;
     }
 
 }

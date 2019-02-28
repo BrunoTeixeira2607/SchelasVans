@@ -10,6 +10,15 @@ $("#login").on("click",function(){
     if(this.text == "Entrar"){
         window.location.assign("../php/Login.php");
     }else{
-        alert("Implementar essa função ainda: "+this.text);
+        $.ajax({
+            url:"../php/Db/doLogout.php",
+            type:"post",
+            data: "",
+            success: function (result){
+                if(result){						
+                    header('location: ../index.php');
+                }
+            }
+        })
     }
 });

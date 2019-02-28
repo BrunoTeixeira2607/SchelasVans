@@ -11,7 +11,6 @@ $("#formLogin").on("submit",function(e){
         data: "login="+login+"&senha="+senha,
         success: function (result){
             if(result){						
-                $_SESSION['logado'] = "sim";
                 header("location: ../php/dashboard.php");
             }else{
                 alert("Erro ao logar. Verifique as credenciais."); //TODO: SWEET ALERT
