@@ -52,29 +52,23 @@ class Usuario {
         }
     }
 
-    public function queryInsert($dados) {
+    public function cadastro($nome,$email,$senha,$datanas,$cpf,$rg) {
         try {
-            $this->nome = $this->objfc->tratarCaracter($dados['nome'], 1);
-            $this->email = $dados['email'];
-            $this->senha = sha1($dados['senha']);
-            $this->dataNas = $dados['dataNas'];
-            $this->CPF = $dados['CPF'];
-            $this->RG = $dados['RG'];
-
-            $this->dataCadastro = $this->objfc->dataAtual(2);
+            
+            $dataCadastro = $this->objfc->dataAtual(2);
             $cst = $this->con->conectar()->prepare("insert into usuario (nome,email,dataNas,RG,CPF,data_Cadastro,senha,tipoUser) values (:nome, :email, :dataNas, :RG, :CPF, :data_Cadastro, :senha, 1);");
-            $cst->bindParam(":nome", $this->nome, PDO::PARAM_STR);
-            $cst->bindParam(":email", $this->email, PDO::PARAM_STR);
-            $cst->bindParam(":dataNas", $this->dataNas, PDO::PARAM_STR);
-            $cst->bindParam(":RG", $this->RG, PDO::PARAM_STR);
-            $cst->bindParam(":CPF", $this->CPF, PDO::PARAM_STR);
-            $cst->bindParam("data_Cadastro", $this->dataCadastro, PDO::PARAM_STR);
-            $cst->bindParam(":senha", $this->senha, PDO::PARAM_STR);
+            $cst->bindParam(":nome", $nome, PDO::PARAM_STR);
+            $cst->bindParam(":email", $email, PDO::PARAM_STR);
+            $cst->bindParam(":dataNas", $dataNas, PDO::PARAM_STR);
+            $cst->bindParam(":RG", $RG, PDO::PARAM_STR);
+            $cst->bindParam(":CPF", $CPF, PDO::PARAM_STR);
+            $cst->bindParam(":data_Cadastro", $dataCadastro, PDO::PARAM_STR);
+            $cst->bindParam(":senha", sha1($senha), PDO::PARAM_STR);
 
             if ($cst->execute()) {
-                return 'ok';
+                return true;
             } else {
-                return 'erro';
+                return false;
             }
         } catch (PDOException $ex) {
             echo 'Exception -> ';
