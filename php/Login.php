@@ -17,13 +17,6 @@
     <body>
         <?php
         require 'Header2.php';
-        require_once 'Classes/Usuario.class.php';
-
-        $objUser = new Usuario();
-
-        if (isset($_POST['btLogar'])) {
-            $objUser->logar($_POST);
-        }
         ?>
 
         <div class= "container">
@@ -33,7 +26,7 @@
                     <div class="card card-panel">
                         <span class="card-title is-center">LOGIN</span>
                         <hr>
-                        <form method="POST">
+                        <form method="POST" id="formLogin">
                             <div class="form-group">
                                 <label for="email">Endereço de e-mail</label>
                                 <input type="email" name="email" class="form-control" id="email" placeholder="exemplo@email.com">
@@ -67,16 +60,6 @@
                     </div>
                 <div>
             </div>
-            <?php if (!empty($_GET['Login']) == 'error   ') { ?>                  
-                <div class="row">
-                    <div class="col s12 m5">
-                        <div class="card-panel red lighten-2">
-                            <span class="white-text"> Ops! Email ou senha inválidos.
-                            </span>
-                        </div>
-                    </div>
-                </div> 
-            <?php } ?>
         </div>
         
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -85,9 +68,6 @@
         <script src="../js/login.js"></script>
 
     </body>
-
-    
-
 
     <footer>
         <?php require 'Footer.php'; ?>

@@ -22,7 +22,6 @@ class Conexao{
         } catch (PDOException $ex) {
 			echo $ex->getMessage();
         }
-    }
-    
+    }    
 }
 ?>

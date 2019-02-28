@@ -116,36 +116,20 @@ class Usuario {
         }
     }
 
-    public function logar($dado) {
-        $this->email = $dado['email'];
-        $this->senha = sha1($dado['senha']);
+    public function logar($email, $password) {
+        $this->email = $email;
+        $this->senha = sha1($password);
         try {
             $cst = $this->con->conectar()->prepare("SELECT IdUser, email, senha FROM `usuario` WHERE email = :email AND senha = :senha");
             $cst->bindParam(":email", $this->email, PDO::PARAM_STR);
             $cst->bindParam(":senha", $this->senha, PDO::PARAM_STR);
             $cst->execute();
             if ($cst->rowCount() == 0) {
-                header('location: Login.php/?Login=error');
+                return false;
             } else {
-                session_start();
-                $rst = $cst->fetch();
-                $_SESSION['logado'] = "sim";
-                $_SESSION['usuario'] = $rst['IdUser'];
-                $tipoUser = $this->con->conectar()->prepare("SELECT tipoUser FROM `usuario` WHERE `IdUser` = :IdUser;");
-                $cst->bindParam(':IdUser', $dado, PDO::PARAM_INT);
-
-                if ($tipoUser == 1) {
-                    $_SESSION['usuario'] = 1;
-                    header("location: ../index.php");
-                } else if ($tipoUser == 2) {
-                    $_SESSION['usuario'] = 2;
-                    header("location: ../index.php");
-                } else if ($tipoUser == 3) {
-                    $_SESSION['usuario'] = 3;
-                    header("location: dashadmin.php");
+                if ($cst->rowCount() == 1) {
+                    return true;
                 }
-
-                header("location: dashadmin.php");
             }
         } catch (PDOException $e) {
             return $e->getMessage();
@@ -161,7 +145,7 @@ class Usuario {
 
     public function sairUser() {
         session_destroy();
-        header('location: http://localhost/login');
+        header('location: ../index.php');
     }
 
 }
